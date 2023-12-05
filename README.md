@@ -1,1 +1,1 @@
-# adaptive_net
+# Collaborative_HAR
