@@ -6,6 +6,8 @@
 
 ![Towards Better Accuracy-Efficiency Trade-Offs: Dynamic Activity Inference via Collaborative Learning from Various Width-Resolution Configurations](imgs/Fig01.png "Towards Better Accuracy-Efficiency Trade-Offs: Dynamic Activity Inference via Collaborative Learning from Various Width-Resolution Configurations")
 
+<br><br/>
+
 ## 📝 Introduction
 
 This paper introduces a revolutionary approach: **Dynamic Activity Inference via Collaborative Learning**. Traditional methods for human activity recognition (HAR) on mobile devices are rigid and lack adaptability to changing resource constraints. Our method breaks this mold by training subnetworks at different widths and resolutions, enabling dynamic accuracy-latency trade-offs at runtime. Unlike conventional approaches requiring multiple networks, ours seamlessly switches between configurations without retraining, slashing costs. Extensive experiments validate its efficacy.
