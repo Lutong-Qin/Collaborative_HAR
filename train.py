@@ -16,16 +16,9 @@ from utils.setlogger import get_logger, get_logger_result
 from utils.model_profiling import model_profiling
 from utils.config import FLAGS
 from utils.datasets import get_dataset
+from utils.config_parser import args
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '1'
-
-parser = argparse.ArgumentParser()
-parser.add_argument('--save', default='save/unimib/default-{}'.format(time.time()),
-                    type=str, metavar='SAVE',
-                    help='path to the experiment logging directory'
-                         '(default: save/debug)')
-args = parser.parse_args()
-
 
 def set_random_seed():
     """set random seed"""
@@ -303,7 +296,7 @@ def main():
 
 if __name__ == "__main__":
 
-    for kk in [2]:
+    for kk in [0, 1, 2, 3, 4]:
         args.save = args.save[:-1] + f'{kk}'
         if not os.path.exists(args.save):
             os.makedirs(args.save)
@@ -320,7 +313,7 @@ if __name__ == "__main__":
         logger_result = get_logger_result(os.path.join(args.save, f'result.log'), 'result')
         # **************
 
-        # *********数据保存列表
+        # *********
         result_test_acc = []
         result_test_loss = []
         result_train_acc = []
