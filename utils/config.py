@@ -2,6 +2,7 @@
 import os
 import sys
 import yaml
+from utils.config_parser import args
 
 # singletone
 FLAGS = None
@@ -150,7 +151,7 @@ class Config(AttrDict):
             print(''.center(80, '-'))
 
 
-def app():
+def app(model_name):
     """Load app via stdin from subprocess"""
     global FLAGS
     if FLAGS is None:
@@ -159,11 +160,11 @@ def app():
             if arg.startswith('app:'):
                 job_yaml_file = arg[4:]
         if job_yaml_file is None:
-            job_yaml_file='apps/unimib.yml'
+            job_yaml_file=f'apps/{model_name}.yml'
         FLAGS = Config(job_yaml_file)
         return FLAGS
     else:
         return FLAGS
 
 
-app()
+app(args.model_name)
